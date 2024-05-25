@@ -1,0 +1,244 @@
+
+<div class="body1">
+  <div class="container1">
+    <div class="mainBox">
+      <div class="box box1">
+        <h3 class="total">Total User</h3>
+        <h1 class="total">{{ShowDataTotal}}</h1>
+        <a class="total r" (click)="showTotal()" >Show List</a>
+      </div>
+
+      <div class="box box2">
+        <h3 class="total">Present</h3>
+       <h1 class="total">{{ShowDataPresentCount}}</h1>
+         <a class="total r"(click)="present()" >Show List</a>
+      </div>
+
+      <div class="box box3">
+        <h3 class="total">Absent</h3>
+       <h1 class="total">{{ShowDataAbsentCount}}</h1>
+         <a class="total r" (click)="absent()" >Show List</a>
+      </div>
+
+
+  </div>
+</div>
+
+<!-- show-data.component.html -->
+<div class="size" [ngSwitch]="menuType">
+<div class="container" *ngSwitchCase="'default'">
+  <div class="searchbar">
+    <div>
+      <h1 style="font-size: 2em; margin: 30px 0; text-align: start;">
+        <a class="showTotalList" (click)="show()">Attendance <span class="hedingP">[Total User]</span></a></h1>
+    </div>
+    <div class="container2 justify-content-center">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <div class="input-group mb-3">
+            <div>
+              <input type="text" class="form-control input-text" placeholder="Search products...."
+                aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="searchTerm"
+                name="search">
+            </div>
+
+            <div class="input-group-append">
+              <button (click)="onSearchTermChangeTotal()" class="btn btn-outline-warning btn-lg" type="button"><i
+                  class="fa fa-search"></i></button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+ 
+  <div class="table-responsive">
+    <table class="content-table " style="width: 80%;">
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Name</th>
+        <th>User Id</th>
+          <th>Mobile No</th>
+        
+          <th>Plan</th>
+          <th>Active Date</th>
+          <th></th>
+          <th></th>
+          <th class="Action">Action</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="body">
+        <tr *ngFor="let item of ShowData.slice().reverse(); let i = index">
+          <!-- <tr *ngFor="let item of ShowData.reverse(); let i = index"> -->
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+         <td>{{item.userId}}</td>
+          <td>{{ item.mobileNumber }}</td>
+       
+          <td>{{ item.plan }}</td>
+          <td>{{item.activeDate | date : 'yyyy-mm-dd'}}</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a (click)="PresentColor(i, item.userId)" [style.color]="isPresentToday(item) ? 'green' : 'red'"
+            >
+              <i class="fa-solid fa-check"></i>
+            </a>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<div class="container" *ngSwitchCase="'present'">
+  <div class="searchbar">
+    <div>
+      <h1 style="font-size: 2em; margin: 30px 0; text-align: start;">
+        <a class="showTotalList" (click)="loadDataPresent()">Attendance <span class="hedingP">[Total User]</span></a></h1>
+    </div>
+    <div class="container2 justify-content-center">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <div class="input-group mb-3">
+            <div>
+              <input type="text" class="form-control input-text" placeholder="Search products...."
+                aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="searchTerm"
+                name="search">
+            </div>
+
+            <div class="input-group-append">
+              <button (click)="onSearchTermChangeTotalPresent()" class="btn btn-outline-warning btn-lg" type="button"><i
+                  class="fa fa-search"></i></button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+ 
+  <div class="table-responsive">
+    <table class="content-table ">
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Name</th>
+        <th>User Id</th>
+          <th>Mobile No</th>
+        
+          <th>Plan</th>
+          <th>Active Date</th>
+          <th></th>
+          <th></th>
+         
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="body">
+        <tr *ngFor="let item of ShowDataPresent.slice().reverse(); let i = index">
+          <!-- <tr *ngFor="let item of ShowData.reverse(); let i = index"> -->
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+         <td>{{item.userId}}</td>
+          <td>{{ item.mobileNumber }}</td>
+       
+          <td>{{ item.plan }}</td>
+          <td>{{item.activeDate | date : 'yyyy-mm-dd'}}</td>
+          <td></td>
+          <td></td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" *ngSwitchCase="'absent'">
+  <div class="searchbar">
+    <div>
+      <h1 style="font-size: 2em; margin: 30px 0; text-align: start;">
+        <a class="showTotalList" (click)="loadDataAbsent()">Attendance <span class="hedingP">[Total User]</span></a></h1>
+    </div>
+    <div class="container2 justify-content-center">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <div class="input-group mb-3">
+            <div>
+              <input type="text" class="form-control input-text" placeholder="Search products...."
+                aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="searchTerm"
+                name="search">
+            </div>
+
+            <div class="input-group-append">
+              <button (click)="onSearchTermChangeTotalAbsent()" class="btn btn-outline-warning btn-lg" type="button"><i
+                  class="fa fa-search"></i></button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+ 
+  <div class="table-responsive">
+    <table class="content-table ">
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Name</th>
+        <th>User Id</th>
+          <th>Mobile No</th>
+        
+          <th>Plan</th>
+          <th>Active Date</th>
+          <th></th>
+          <th></th>
+          <!-- <th class="Action">Action</th> -->
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="body">
+        <tr *ngFor="let item of ShowDataAbsent.slice().reverse(); let i = index">
+          <!-- <tr *ngFor="let item of ShowData.reverse(); let i = index"> -->
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+         <td>{{item.userId}}</td>
+          <td>{{ item.mobileNumber }}</td>
+       
+          <td>{{ item.plan }}</td>
+          <td>{{item.activeDate | date : 'yyyy-mm-dd'}}</td>
+          <td></td>
+          <td></td>
+          <!-- <td>   <a (click)="PresentColor(i,item.userId)" [style.color]="item.actionClicked ? 'green' : 'red'"><i class="fa-solid fa-check"></i></a>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,112 @@
+<div class="body">
+    <div class="container">
+
+
+      <div class="basicInfo">
+          <img src="/assets/registration/logonw.jpg" alt="Img not found">
+          <p>{{showUserData.plan}} Plan</p>
+          <h2>{{showUserData.name}}</h2>
+          <div class="basic">
+            <div class="div">
+                <label for="1">Mobile Number</label>
+                <h3 id="1">{{showUserData.mobileNumber }}</h3>
+            </div>
+            <div class="div">
+                <label for="2">Joining Date</label>
+                <h3 id="2">{{showUserData.joinDate | date:'dd-MM-yyyy'}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="advancesInfo">
+         <div class="div1">
+            <div class="last lastnew">
+                <h4 class="la">Active date</h4>
+                <h3 class="da">{{showUserData.activeDate | date:'dd-MM-yyyy'}}</h3>
+            </div>
+            <h1 class="h1 hii">{{showUserDataCount.length}}</h1>
+             <h3>Attendance</h3>
+             <span>[this month]</span>
+             <div>
+               
+                <a class="btn btnnew" (click)="showCountAtten()">View</a>
+             </div>
+         </div>
+
+         <div class="div1 div2">
+            <div class="last">
+                <h4 class="la">Last date</h4>
+                <h3 class="da">{{showUserDataWeight.weightDate | date : 'dd-MM-yyyy'}}</h3>
+            </div>
+            
+            <h1 class="h1">{{showUserDataWeight.weightKg}}</h1>
+             <h3 class="hi">Weight</h3>
+             <div>
+                <a class="btn" (click)="update()">Update</a>
+                <a class="btn" (click)="showCountWeight()">View</a>
+             </div>
+         </div>
+        </div>
+
+        <div class="out">
+            <button class="btn btnL" type="submit" (click)="logOut()">Log Out</button>
+        </div> 
+
+
+       
+    </div>
+
+    <div class="size" [ngSwitch]="menuType">
+        <div class="container1" *ngSwitchCase="'attendance'">
+          <div class="table-responsive">
+            <table class="content-table" style="width: 40%;">
+              <thead>
+                <tr>
+                  <th>Serial No.</th>
+                  <th>Attendance Date</th>
+                  <th>Attendance</th>
+                </tr>
+              </thead>
+              <tbody class="body1">
+                <tr *ngFor="let item of showUserDataCount.slice().reverse(); let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td >{{item.attendanceDate | date : 'yyyy-MM-dd'}}</td>
+                  <td>{{ item.isPresent ? 'Present' : 'Absent' }}</td> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="container1" *ngSwitchCase="'weight'">
+          <div class="table-responsive">
+            <table class="content-table" style="width: 40%;">
+              <thead>
+                <tr>
+                  <th>Serial No.</th>
+                  <th>Attendance Date</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody class="body1">
+                <tr *ngFor="let item of showWeightTotalList.slice().reverse(); let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td >{{item.weightDate | date : 'yyyy-MM-dd'}}</td>
+                  <td>{{ item.weightKg}}</td> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="container1 bo" *ngSwitchCase="'update'">
+          <h1 class="he">Update Weight</h1>
+          <div class="updateInfo">
+            <input class="inputUpdate" type="number" name="weightAdd" [(ngModel)]="updateInfo.weight">
+            <a class="wei" (click)="AddInfoWeight()">Update</a>
+          </div>
+       
+        </div>
+      </div>
+      
+</div>

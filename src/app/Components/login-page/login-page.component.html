@@ -1,0 +1,27 @@
+<div class="body">
+    <div class="container">
+        <h2>User Login</h2>
+
+        <form >
+
+            <div class="form-group">
+                <input  type="text" required name="user" [(ngModel)]="userInfoAutho.userId">
+                <label  for="">User Id</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="form-group">
+                <input [type]="type" required name="pass" [(ngModel)]="userInfoAutho.password" #passwordInput>
+                <label for="">Password</label>
+                <i (click)="hideShowPass()" class="fa-solid fa-lock"></i>
+            </div>
+
+            <p>Remember Me <a href="#">Forget Password</a></p>
+
+            <input id="btn" type="submit" value="Login" (click)="login()">
+
+            <p>Don't have a account? <a routerLink="/main/registraion">Register</a></p>
+
+        </form>
+    </div>
+</div>

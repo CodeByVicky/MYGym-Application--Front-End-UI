@@ -1,0 +1,79 @@
+<div class="body">
+    <div class="container">
+        <div class="apply_box">
+        <h1>Registration</h1>
+       
+
+    <form>
+        <div class="form_container">
+        <div class="form-group">
+            <label for="first name">Name <span> *</span></label>
+            <input type="text" id="first name" placeholder="Enter name" [(ngModel)]="RegistrationInfo.name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="last name">User Id <span> *</span></label>
+            <input type="text" id="last name" placeholder="Enter User Id" [(ngModel)]="RegistrationInfo.userId" name="userId">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Mobile Number <span> *</span></label>
+            <input type="number" id="email" placeholder="Enter Mobile Number" [(ngModel)]="RegistrationInfo.mobileNumber" name="mobileNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="Pincode">Create Password</label>
+            <input type="text" id="Pincode" placeholder="Enter Password" [(ngModel)]="RegistrationInfo.password" name="password">
+        </div>
+
+        <div class=" form-group textarea_control">
+            <label>
+                Address
+                <span> *</span></label>
+
+            <textarea rows="4" cols="50"
+            placeholder="Enter Address" [(ngModel)]="RegistrationInfo.address" name="address"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="City">City <span> *</span></label>
+            <input type="text" id="City" placeholder="Enter City" [(ngModel)]="RegistrationInfo.city" name="city">
+        </div>
+
+        <div class="form-group">
+            <label>Plan <span> *</span></label>
+            <select [(ngModel)]="RegistrationInfo.plan" name="plan">
+              <option value="" disabled selected>Select Plan</option>
+              <option value="Annually">Annually</option>
+              <option value="Semiannually">Semiannually</option>
+              <option value="Monthly">Monthly</option>
+            </select>
+          </div> 
+       
+
+        
+
+     
+        <div class="form-group">
+            <label for="Date">Joining Date <span> *</span></label>
+            <input type="Date" id="Date" placeholder="Enter Date" [(ngModel)]="RegistrationInfo.joinDate" name="joinDate">
+        </div>
+        <div class="form-group">
+            <label for="CV">Profile Photo</label>
+            <input type="file" id="CV" placeholder="Upload Photo" [(ngModel)]="RegistrationInfo.profilePhoto" name="profilePhoto">
+        </div>
+       
+    </div>
+  
+    
+        </form>
+        <div>
+            <button (click)="submit()" class="btn" type="submit">Apply Now</button>
+           
+        </div>
+        <p>Already Register Please : <a routerLink="/main/login">Login</a></p>
+    </div>
+    
+</div>
+
+</div>
+  

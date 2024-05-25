@@ -1,0 +1,93 @@
+
+  <div class="MyContainer">
+
+    <div class="header">
+    <nav>
+      <div class="logo">
+        <h1>My GYM</h1>
+      </div>
+      <div [ngSwitch]="menuType">
+        <ul *ngSwitchCase="'guest'" id="menuList" [style.maxHeight]="menuListMaxHeight">
+          <li><a class="homePa" routerLink="/main/home">Home</a></li>
+          <li><a routerLink="/main/login" >User Login</a></li>
+          <li><a routerLink="/main/registraion">Register</a></li>
+          <li><a routerLink="/main/plan">Membership Plans</a></li>
+          
+        </ul>
+     
+     
+     
+        <ul *ngSwitchCase="'user'" id="menuList" [style.maxHeight]="menuListMaxHeight">
+          <li><a class="homePa" routerLink="/main/home">Home</a></li>
+          <li><a routerLink="/main/home" (click)="logOut()" >Log Out</a></li>
+          <li><a routerLink="/main/plan">Membership Plans</a></li>
+          <li><a routerLink="/main/user">User Profile</a></li>
+        </ul>
+
+        <ul *ngSwitchCase="'admin'" id="menuList" [style.maxHeight]="menuListMaxHeight">
+          <li><a class="homePa" routerLink="/main/home">Home</a></li>
+          <li><a  routerLink="/main/home" (click)="logOut()" >Log Out</a></li>
+          <li><a routerLink="/main/list">Attendance</a></li>
+          <li><a routerLink="/main/dash">Dashboard</a></li>
+        </ul>
+
+      </div>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars" (click)="toggleMenu()"></i>
+      </div>
+    </nav>
+  </div>
+ <router-outlet></router-outlet>
+
+  <div class="bottom">
+  <footer>
+
+    <div class="phone">
+    <div class="topT">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+     
+     
+    
+     
+        <h3>TALK TO US</h3>
+      <p>Mobile No:9146237137</p>
+      <p>Fax:1223 2235 335</p>
+      </div>
+      
+  
+
+    <div class="phone">
+      <div class="topT">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+    
+      <h3>MAIL US &commat;</h3>
+      <p>vikidwaghmare&commat;gmail.com</p>
+      <p>thevicky144&commat;gmail.com</p>
+    </div>
+    
+
+    <div class="phone">
+      <div class="topT">
+        <i  class="fa-solid fa-location-crosshairs"></i>
+      </div>
+  
+      <h3 >OUR LOCATION</h3>
+      <p>Datta Nagar Kalamb</p>
+      <p>Dist-Dharashiv State-Maharashtra</p>
+    </div>
+  </footer>
+    <!-- <button class="btnJoin" type="submit">Admin Login</button> -->
+    <a routerLink="/main/admin" class="btnJoin">Admin Login</a>
+  </div>
+
+
+</div>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />

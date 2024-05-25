@@ -1,0 +1,684 @@
+*{
+    
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.MyContainer{
+    width: 100vw;
+    height: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+img{
+    width:100%;
+    height: 500px;
+   
+}
+
+.bottom{
+    width: 100%;
+    height: 100px;
+}
+footer{
+    width: 100%;
+    height: 150px;
+}
+
+.maincontant{
+    width: 100%;
+
+  
+   
+}
+
+
+.categaryScroll{
+    width: 100%;
+    height: auto;
+    /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+}
+
+
+.scroll {
+    background: url(/assets/newZuma.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+}
+.pilates {
+    background: url(/assets/pilates.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+.yoga {
+    background: url(/assets/yoga.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+
+.cardio {
+    background: url(/assets/cardio.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+
+.abs {
+    background: url(/assets/abs.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+
+.glut {
+    background: url(/assets/glut.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+
+.gym {
+    background: url(/assets/gym.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+
+.fitness {
+    background: url(/assets/fitness.jpg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-position: center;
+    background-size: cover;
+    width: 100%; /* Adjust as per your requirement */
+   height: 100%; /* Adjust as per your requirement */
+    transition:  0.5s; /* Add smooth transition */
+   margin: 5px 5px;
+   
+}
+.scroll:hover {
+    background: url(/assets/zumbaLogo.png) no-repeat;
+    background-color: rgba(206, 128, 218, 0.8);
+    background-position: center;
+   
+    
+}
+
+.yoga:hover{
+    background: url(/assets/YogaLogo.png) no-repeat;
+    background-color: rgba(188, 128, 218, 0.8);
+    background-position: center;
+}
+
+.cardio:hover{
+    background: url(/assets/cardioLogo.png) no-repeat;
+    background-color: rgba(134, 105, 209, 0.8);
+    background-position: center;
+}
+.abs:hover{
+    background: url(/assets/absLogo.png) no-repeat;
+    background-color: rgba(105, 209, 197, 0.8);
+    background-position: center;
+}
+
+.glut:hover{
+    background: url(/assets/clutLogo.png) no-repeat;
+    background-color: rgba(105, 209, 159, 0.8);
+    background-position: center;
+}
+.pilates:hover{
+    background: url(/assets/pilatesLogo.png) no-repeat;
+    background-color: rgba(92, 204, 109, 0.8);
+    background-position: center;
+}
+
+.gym:hover{
+    background: url(/assets/gymLogo.png) no-repeat;
+    background-color: rgba(144, 204, 92, 0.8);
+    background-position: center;
+}
+
+.fitness:hover{
+    background: url(/assets/fitnessLogo.png) no-repeat;
+    background-color: rgba(192, 176, 81, 0.8);
+    background-position: center;
+}
+h3{
+    color: white;
+    position: relative;
+    top: 160px;
+   text-align: center;
+   font-size: 1.2em;
+   
+    background-color:#e01860;
+}
+
+
+
+
+.categaryScroll {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%; /* Adjust as needed */
+}
+
+.scroll {
+    display: inline-block;
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+  .workoutinfo{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blue; */
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex-direction: column;
+}
+
+
+.mid,.mid1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.top_h1{
+   
+    text-align: center;
+   
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 1.5em;
+   margin-top: 70px;
+ }
+
+ hr {
+   align-self: center;
+   justify-self: center;
+    border: 2px solid #e01860; /* Set the border style, color, and width */
+    width: 20%;
+   
+    margin-bottom: 30px;
+}
+.top_p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+}
+
+.midel{
+    width: 80%;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    /* background-color: rgb(35, 197, 173); */
+    
+}
+
+.ima {
+    width: 150px;
+    height: 150px; 
+    margin: 0 20px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+h2{
+    font-size: 1.3em;
+    font-weight: bold;
+    color:#e01860;
+}
+h6{
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.mid{
+    margin: 100px 10px;
+}
+
+.contentButton{
+    outline: none;
+    border: none;
+    background-color:  rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    
+}
+
+.contentButton:hover{
+  background-color:#e01860 ;
+}
+
+
+
+.joinimg{
+    width: auto;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+
+}
+
+.joinP{
+   width: 70%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  padding: 10px 0;
+   
+}
+
+.joinHr{
+    width: 60%;
+}
+
+.trainers{
+    width: 80%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  
+   
+  
+}
+
+
+
+.traiPerson{
+    width: 20%;
+    height: 20%;
+    object-fit: cover; 
+  margin: 0 20px;
+}
+
+.traiInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ margin-bottom: 20px;
+    margin-top: 60px;
+}
+.trahr{
+   width: 40%;
+}
+
+.joininfo{
+    width: 80%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* margin-top: 50px; */
+   
+}
+
+.joinPhoto{
+    width: 600px;
+}
+
+.joinData{
+    background-color: black;
+    color: white;
+    height: 500px;
+}
+
+.joinData h1 {
+   padding: 40px 20px;
+   font-size: 2em;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.joinHr{
+   border: 2px solid rgb(244, 225, 246);
+}
+
+.points{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+  
+}
+.point{
+    width: 150px;
+  padding-left: 10px;
+   
+  padding-top: 20px;
+    font-size: 0.8em;
+   
+}
+
+.paragraph {
+    width: 150px;
+    white-space: pre-wrap;
+  }
+
+  .infoPoint{
+    padding: 0 50px;
+    
+  }
+
+  .joinPr{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .btnJoin{
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    width: 150px;
+    white-space: pre-wrap;
+    height: 35px;
+    margin: 20px 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:  bold;
+    margin-left: 30px;
+    font-size: 1.2em;
+    text-align: center;
+ text-decoration: none;
+  }
+
+  .btnJoin:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #e01860;
+    
+  }
+
+  .joinHr1{
+    border: 2px solid #e01860;
+    width: 50%;
+  }
+
+  .Feedback{
+    width: 80%;
+   
+    /* background-color: aqua; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+
+  .feedimg .carousel-item img {
+    width: 55%; /* Adjust the maximum width */
+    height: auto; /* Ensures the image maintains its aspect ratio */
+  }
+ 
+  .Feedback {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center align text inside feedinfo */
+  
+}
+
+
+  
+  .feedimg {
+    width: 55%;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .feedinfo h1{
+   font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .feedinfo {
+    text-align: center; /* Center align all content */
+  }
+  
+  .joinHr2 {
+    width: 50%; /* Set the width of the <hr> */
+    margin: 20px auto; /* Set margin to center the <hr> horizontally */
+  }
+  @media screen and (max-width:1288px) {
+    .trainers{
+        width: 80%;
+   text-align: center;
+      
+    }
+
+    .traiPerson{
+        width: 20%;
+        height: 20%;
+        object-fit: cover; 
+      margin: 0 10px;
+      
+    }
+
+    .joininfo{
+       flex-direction: column;
+       
+    }
+
+    .joinData{
+        width: auto;
+        height: auto;
+    }
+
+    .joinPhoto{
+        width: auto;
+    }
+
+    .infoPoint{
+        padding: 0 40px;
+        
+      }
+
+      .btn_sub{
+        display: flex;
+        flex-direction: row;
+      }
+}
+  @media screen and (max-width:870px) {
+    img{
+        width: auto;
+        height: 300px;
+    }
+
+    .scroll {
+      
+        width: 70px; /* Adjust as needed */
+        height: 70px; /* Adjust as needed */
+    
+
+    }
+
+
+
+    .mid,.mid1{
+       
+        flex-direction: column;
+        margin: 10px 0;
+        text-align: center;
+     
+    }
+
+    .content{
+       padding: 5px 0;
+    }
+
+    .top_p{
+       
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    .trainers{
+        width: 80%;
+   text-align: center;
+      
+    }
+
+    .traiPerson{
+        width: 15%;
+        height: 15%;
+        object-fit: cover; 
+      margin: 0 10px;
+      
+    }
+
+    .joininfo{
+       flex-direction: column;
+       
+    }
+
+    .joinData{
+        width: auto;
+        height: auto;
+    }
+
+    .joinPhoto{
+        width: auto;
+    }
+
+    .feedimg {
+        width: auto;
+       
+      }
+}
+
+@media screen and (max-width:400px) {
+    img{
+        width: auto;
+        height: 200px;
+    }
+
+    .scroll {
+     
+        width: 50px; /* Adjust as needed */
+        height: 50px; /* Adjust as needed */
+      
+    }
+}
+
+
+@media screen and (min-width:2000px) {
+    
+    img{
+        width: auto;
+        height: 800px;
+    }
+
+    .scroll {
+     
+        width: 400px; /* Adjust as needed */
+        height: 400px; /* Adjust as needed */
+      
+    }
+
+    .joinPhoto{
+        width: auto;
+        height: auto;
+    }
+
+    h3{
+        
+        top: 460px;
+      
+       font-size: 3em;
+       
+    
+    }
+}
+
+@media screen and (min-width:2400px) {
+    
+    img{
+        width: auto;
+        height: 1500px;
+    }
+
+    .scroll {
+     
+        width: 600px; /* Adjust as needed */
+        height: 600px; /* Adjust as needed */
+      
+    }
+}
